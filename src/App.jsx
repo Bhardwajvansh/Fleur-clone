@@ -1,5 +1,6 @@
 import FeaturesSection from "./Components/Features/Features"
 import Hero from "./Components/Hero/Hero"
+import Stats from "./Components/Stats/Stats"
 import TestimonialCarousel from "./Components/Testimonial/Testimonial"
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Hero />
       <FeaturesSection />
       <TestimonialCarousel />
+      <Stats />
     </>
   )
 }
