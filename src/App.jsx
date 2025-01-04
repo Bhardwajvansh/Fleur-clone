@@ -1,3 +1,4 @@
+import Backtotop from "./Components/Backtotop/backtotop"
 import FeaturesSection from "./Components/Features/Features"
 import Footer from "./Components/Footer/Footer"
 import Hero from "./Components/Hero/Hero"
@@ -12,6 +13,7 @@ function App() {
       <FeaturesSection />
       <TestimonialCarousel />
       <Stats />
+      <Backtotop />
       <Footer />
     </>
   )
