@@ -1,0 +1,6 @@
+.testi-container {
+  color: #656565;
+  background: url("../../Assets/petals-bg.jpg") no-repeat center center;
+  background-size: cover;
+  filter: grayscale(100%);
+}
