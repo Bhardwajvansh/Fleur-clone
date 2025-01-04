@@ -1,9 +1,12 @@
+import FeaturesSection from "./Components/Features/Features"
+import Hero from "./Components/Hero/Hero"
 
 function App() {
 
   return (
     <>
-      hello
+      <Hero />
+      <FeaturesSection />
     </>
   )
 }
