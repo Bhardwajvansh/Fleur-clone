@@ -10,6 +10,7 @@ import Stats from "./Components/Stats/Stats"
 import Team from "./Components/Team/Team"
 import TestimonialCarousel from "./Components/Testimonial/Testimonial"
 import TwitterParallax from "./Components/Twitter/Twitter"
+import Work from "./Components/Work/Work"
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Blog />
       <TestimonialCarousel />
       <Stats />
+      <Work />
       <StatsDisplay />
       <Team />
       <Recommended />

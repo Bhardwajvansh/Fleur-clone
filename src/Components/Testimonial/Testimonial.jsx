@@ -34,7 +34,7 @@ const TestimonialCarousel = () => {
 
     return (
         <div className="w-full px-2 sm:px-4 py-32 testi-container" style={{ color: "#4a3e5a" }}>
-            <h2 className="text-4xl font-semibold text-center mb-12">TESTIMONIALS</h2>
+            <h2 className="text-4xl text-center mb-12">TESTIMONIALS</h2>
             <div className="flex justify-center items-center gap-2 mb-8">
                 <div className="h-px w-12" style={{ background: "#4a3e5a" }}></div>
                 <div className="w-2 h-2 rounded-full" style={{ background: "#4a3e5a" }}></div>
