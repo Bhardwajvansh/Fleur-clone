@@ -1,28 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Star, Send, Heart, Zap } from 'lucide-react';
-import { useState, useEffect } from 'react';
 
-const StatCard = ({ icon: Icon, value, label }) => {
+const StatCard = ({ icon: Icon, value, label, isVisible }) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        const duration = 2000;
-        const steps = 60;
-        const increment = value / steps;
-        let current = 0;
+        if (isVisible) {
+            const duration = 2000;
+            const steps = 60;
+            const increment = value / steps;
+            let current = 0;
 
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= value) {
-                setCount(value);
-                clearInterval(timer);
-            } else {
-                setCount(Math.floor(current));
-            }
-        }, duration / steps);
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= value) {
+                    setCount(value);
+                    clearInterval(timer);
+                } else {
+                    setCount(Math.floor(current));
+                }
+            }, duration / steps);
 
-        return () => clearInterval(timer);
-    }, [value]);
+            return () => clearInterval(timer);
+        }
+    }, [value, isVisible]);
 
     return (
         <div className="flex flex-col items-center p-4 space-y-2">
@@ -34,13 +35,37 @@ const StatCard = ({ icon: Icon, value, label }) => {
 };
 
 const StatsDisplay = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.5 } // Trigger when 50% of the section is visible
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
     return (
-        <div className="w-full max-w-7xl mx-auto">
+        <div ref={sectionRef} className="w-full max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <StatCard icon={Star} value={168} label="Design" />
-                <StatCard icon={Send} value={2590} label="Marketing" />
-                <StatCard icon={Heart} value={347} label="Development" />
-                <StatCard icon={Zap} value={191} label="User Experience" />
+                <StatCard icon={Star} value={168} label="Design" isVisible={isVisible} />
+                <StatCard icon={Send} value={2590} label="Marketing" isVisible={isVisible} />
+                <StatCard icon={Heart} value={347} label="Development" isVisible={isVisible} />
+                <StatCard icon={Zap} value={191} label="User Experience" isVisible={isVisible} />
             </div>
         </div>
     );
