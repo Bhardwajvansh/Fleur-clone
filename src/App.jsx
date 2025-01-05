@@ -6,6 +6,7 @@ import Footer from "./Components/Footer/Footer"
 import Hero from "./Components/Hero/Hero"
 import StatsDisplay from "./Components/Stats-2/Stats-2"
 import Stats from "./Components/Stats/Stats"
+import Team from "./Components/Team/Team"
 import TestimonialCarousel from "./Components/Testimonial/Testimonial"
 import TwitterParallax from "./Components/Twitter/Twitter"
 
@@ -19,6 +20,7 @@ function App() {
       <TestimonialCarousel />
       <Stats />
       <StatsDisplay />
+      <Team />
       <TwitterParallax />
       <Clients />
       <Backtotop />
