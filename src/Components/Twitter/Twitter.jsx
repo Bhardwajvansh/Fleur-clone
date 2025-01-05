@@ -6,20 +6,17 @@ const TwitterParallax = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Get the element's position relative to the viewport
             const element = document.getElementById('parallax-container');
             if (element) {
                 const rect = element.getBoundingClientRect();
                 const elementTop = rect.top;
-                // Only update offset when the element is in view
                 if (elementTop <= window.innerHeight && elementTop >= -rect.height) {
-                    setOffset(elementTop * 0.4); // Reduced parallax speed
+                    setOffset(elementTop * 0.4);
                 }
             }
         };
 
         window.addEventListener('scroll', handleScroll);
-        // Initial check
         handleScroll();
 
         return () => {

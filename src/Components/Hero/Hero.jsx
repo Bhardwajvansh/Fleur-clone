@@ -1,37 +1,75 @@
-import React from "react";
-import "./Hero.css"; // Optional: Add custom styles for the navbar
-import Logo from "../../Assets/01-logo-light.png"
+import React, { useState } from 'react';
+import { Menu, X, ShoppingCart, Search } from 'lucide-react';
+import Bg from "../../Assets/h1-slide-1-background.jpeg";
+import Logo from "../../Assets/01-logo-light.png";
 
 const Hero = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const navLinks = [
+        { name: 'HOME', href: '#home' },
+        { name: 'PAGES', href: '#pages' },
+        { name: 'PORTFOLIO', href: '#portfolio' },
+        { name: 'BLOG', href: '#blog' },
+        { name: 'SHOP', href: '#shop' },
+        { name: 'ELEMENTS', href: '#elements' }
+    ];
+
     return (
-        <div className="container">
-
-            <nav className="navbar">
-                <div className="navbar-logo">
-                    <img src={Logo} alt="" />
+        <div
+            className="min-h-screen bg-center bg-cover bg-no-repeat"
+            style={{ backgroundImage: `url(${Bg})` }} 
+        >
+            <nav className="max-w-7xl mx-auto px-4 py-5" style={{borderBottom:"1px solid white"}}>
+                <div className="flex justify-between items-center">
+                    <div className="w-32 md:w-40">
+                        <img src={Logo} alt="Logo" className="w-2/3" />
+                    </div>
+                    <ul className="hidden md:flex space-x-8">
+                        {navLinks.map((link) => (
+                            <li key={link.name}>
+                                <a
+                                    href={link.href}
+                                    className="text-white hover:text-gray-300 transition-colors"
+                                >
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="flex items-center space-x-4">
+                        <button className="text-white hover:text-gray-300 transition-colors">
+                            <ShoppingCart className="w-6 h-6" />
+                        </button>
+                        <button className="text-white hover:text-gray-300 transition-colors">
+                            <Search className="w-6 h-6" />
+                        </button>
+                        <button
+                            className="text-white hover:text-gray-300 transition-colors md:hidden"
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        >
+                            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    </div>
                 </div>
-                <ul className="navbar-links">
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#pages">PAGES</a></li>
-                    <li><a href="#portfolio">PORTFOLIO</a></li>
-                    <li><a href="#blog">BLOG</a></li>
-                    <li><a href="#shop">SHOP</a></li>
-                    <li><a href="#elements">ELEMENTS</a></li>
-                </ul>
-                <div className="navbar-icons">
-                    <button className="icon-btn">
-                        <i className="fas fa-shopping-cart"></i>
-                    </button>
-                    <button className="icon-btn">
-                        <i className="fas fa-search"></i>
-                    </button>
-                    <button className="icon-btn">
-                        <i className="fas fa-bars"></i>
-                    </button>
-                </div>
+                {isMenuOpen && (
+                    <div className="md:hidden mt-4">
+                        <ul className="flex flex-col space-y-4">
+                            {navLinks.map((link) => (
+                                <li key={link.name}>
+                                    <a
+                                        href={link.href}
+                                        className="text-white font-bold block hover:text-gray-300 transition-colors"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </nav>
-
-
         </div>
     );
 };
