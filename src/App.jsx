@@ -1,4 +1,5 @@
 import Backtotop from "./Components/Backtotop/backtotop"
+import Blog from "./Components/Blog/Blog"
 import Clients from "./Components/Clients/Clients"
 import FeaturesSection from "./Components/Features/Features"
 import Footer from "./Components/Footer/Footer"
@@ -14,6 +15,7 @@ function App() {
     <>
       <Hero />
       <FeaturesSection />
+      <Blog />
       <TestimonialCarousel />
       <Stats />
       <StatsDisplay />
