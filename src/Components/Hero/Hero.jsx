@@ -110,7 +110,8 @@ const Hero = () => {
                 </div>
             </div>
             <nav
-                className="relative z-10 max-w-7xl mx-auto px-10 py-10 bg-white md:bg-transparent border-b border-white"
+                className="relative z-10 max-w-7xl mx-auto px-2 py-5 bg-white md:bg-transparent"
+                style={{borderBottom:"1px solid white"}}
             >
                 <div className="flex justify-between items-center">
                     <button

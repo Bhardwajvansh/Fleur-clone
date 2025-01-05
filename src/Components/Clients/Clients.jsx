@@ -4,7 +4,7 @@ import logo2 from "../../Assets/12-client-2.png"
 import logo3 from "../../Assets/12-client-3.png"
 import logo4 from "../../Assets/12-client-4.png"
 import logo5 from "../../Assets/12-client-5.png"
-import logo6 from "../../Assets/01-client-6.png"
+// import logo6 from "../../Assets/01-client-6.png"
 import logo7 from "../../Assets/01-client-7.png"
 
 
