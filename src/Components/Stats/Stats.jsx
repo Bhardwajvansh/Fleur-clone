@@ -47,7 +47,7 @@ const SkillsProgress = () => {
         { name: 'Design', percentage: 65 },
         { name: 'Marketing', percentage: 90 },
         { name: 'Development', percentage: 87 },
-        { name: 'User Experience', percentage: 70 }
+        { name: 'User Experience', percentage: 70 },
     ];
 
     useEffect(() => {
@@ -69,23 +69,28 @@ const SkillsProgress = () => {
     }, []);
 
     return (
-        <div className="mx-auto p-8 flex flex-wrap justify-between items-center" ref={sectionRef}>
-            <div className="mb-12 w-1/2 p-20">
-                <h1 className="text-4xl font-semibold text-gray-800 mb-2">
+        <div
+            className="mx-auto px-8 lg:px-16 py-24 flex flex-wrap justify-around items-center gap-8"
+            ref={sectionRef}
+        >
+            <div className="w-full md:w-1/3 space-y-6">
+                <h1 className="text-3xl sm:text-4xl font-semibold text-gray-800">
                     ENGAGING, CREATIVE PAGE AND PURPOSEFUL THEME.
                 </h1>
-                <p className="text-lg italic text-gray-600 mb-6">
-                    Express yourself and your business through this amazing theme
+                <p className="text-md sm:text-lg italic text-gray-600">
+                    Express yourself and your business through this amazing
                 </p>
-                <p className="text-gray-500 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
                     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam exam
                 </p>
             </div>
-            <div className="space-y-8 w-1/2 p-10">
+            <div className="w-full md:w-1/2 space-y-6">
                 {skills.map((skill) => (
                     <div key={skill.name} className="flex items-center">
                         <div className="w-32">
-                            <span className="text-gray-700">{skill.name}</span>
+                            <span className="text-gray-700 text-sm sm:text-base">
+                                {skill.name}
+                            </span>
                         </div>
                         <AnimatedBar percentage={skill.percentage} isVisible={isVisible} />
                     </div>

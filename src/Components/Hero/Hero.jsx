@@ -113,15 +113,12 @@ const Hero = () => {
                 className="relative z-10 max-w-7xl mx-auto px-10 py-10 bg-white md:bg-transparent border-b border-white"
             >
                 <div className="flex justify-between items-center">
-                    {/* Mobile Menu Button */}
                     <button
                         className="text-black md:text-white hover:text-gray-500 transition-colors md:hidden"
                         onClick={() => setIsMenuOpen(true)}
                     >
                         <Menu className="w-6 h-6" />
                     </button>
-
-                    {/* Logo */}
                     <div className="w-32 md:w-40">
                         <img
                             src={Logo}
@@ -129,8 +126,6 @@ const Hero = () => {
                             className="w-2/3 filter brightness-0 md:filter-none"
                         />
                     </div>
-
-                    {/* Navigation Links */}
                     <ul className="hidden md:flex space-x-8">
                         {navLinks.map((link) => (
                             <li key={link.name}>
@@ -143,8 +138,6 @@ const Hero = () => {
                             </li>
                         ))}
                     </ul>
-
-                    {/* Action Buttons */}
                     <div className="flex items-center space-x-4">
                         <button className="text-white hover:text-gray-500 transition-colors hidden md:block ">
                             <ShoppingCart className="w-6 h-6" />
