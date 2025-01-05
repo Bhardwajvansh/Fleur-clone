@@ -55,7 +55,7 @@ const Team = () => {
             <div className="w-full min-h-screen ">
                 <div className="px-4 py-16 mx-auto max-w-7xl">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">OUR AMAZING TEAM</h2>
+                        <h2 className="text-4xl text-gray-900 mb-4">OUR AMAZING TEAM</h2>
                         <div className="flex justify-center items-center gap-2 mb-8">
                             <div className="h-px w-12 bg-gray-800"></div>
                             <div className="w-2 h-2 rounded-full bg-gray-800"></div>
