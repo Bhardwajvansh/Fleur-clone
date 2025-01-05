@@ -6,7 +6,7 @@ const StatCard = ({ icon: Icon, value, label }) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        const duration = 2000; // 2 seconds
+        const duration = 2000;
         const steps = 60;
         const increment = value / steps;
         let current = 0;
