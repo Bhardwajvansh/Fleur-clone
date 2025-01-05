@@ -39,31 +39,39 @@ const Blog = () => {
             date: "March 24, 2028",
             image: Img4,
             description: "Proin gravida nibh vel veliauctor aliquenean sollicitudin quis bibendum auctor, nisi elit consequat ipsum..."
-        }
+        },
+        {
+            id: 6,
+            title: "CHOOSE YOUR STYLE",
+            category: "Decoration",
+            date: "February 24, 2028",
+            image: Img3,
+            description: "Proin gravida nibh vel veliauctor aliquenean sollicitudin quis bibendum auctor, nisi elit consequat ipsum..."
+        },
+        {
+            id: 5,
+            title: "CONNECT YOUR WORLDS",
+            category: "Fashion",
+            date: "January 24, 2028",
+            image: Img2,
+            description: "Proin gravida nibh vel veliauctor aliquenean sollicitudin quis bibendum auctor, nisi elit consequat ipsum..."
+        },
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
-    const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const position = window.scrollY;
-            setScrollPosition(position);
-        };
-
         const handleResize = () => {
             setIsMobile(window.innerWidth < 768);
         };
 
         handleResize();
-        window.addEventListener('scroll', handleScroll, { passive: true });
         window.addEventListener('resize', handleResize);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleResize);
         };
     }, []);
@@ -94,28 +102,27 @@ const Blog = () => {
         ? [posts[currentIndex]]
         : posts.slice(currentIndex, currentIndex + 3);
 
-    const parallaxStyle = {
-        backgroundImage: `url(${Bg})`,
-        backgroundAttachment: 'fixed',
-        backgroundSize: 'cover',
-        // backgroundPosition: 'top',
-        transform: `translateY(${scrollPosition * 0.3}px)`,
-        transition: 'transform 0.1s ease-out',
-    };
-
     return (
         <section className="relative overflow-hidden">
-            <div className="absolute inset-0 h-[150%] -z-20">
-                <div
-                    className="absolute inset-0 w-full h-full bg-cover bg-no-repeat"
-                    style={parallaxStyle}
-                />
-                <div className="absolute inset-0 bg-white/40" />
-            </div>
+            {/* Add the image as a fixed background */}
+            <div
+                className="absolute inset-0 -z-20 bg-cover bg-center"
+                style={{
+                    backgroundImage: `url(${Bg})`,
+                }}
+            />
+            {/* Overlay to enhance contrast */}
+            <div className="absolute inset-0 bg-white/40 -z-10"></div>
+
             <div className="relative z-10 py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl text-gray-800 mb-4">WE'RE SHARING EVERYTHING</h2>
+                        <div className="flex justify-center items-center gap-2 mb-8">
+                            <div className="h-px w-12 bg-gray-800"></div>
+                            <div className="w-2 h-2 rounded-full bg-gray-800"></div>
+                            <div className="h-px w-12 bg-gray-800"></div>
+                        </div>
                         <p className="text-gray-600 italic">
                             Lorem ipsum dolor sit amet, consectetur a gravida nibhuam vel velit auctor aliquet aenean sollicitudin lorem.
                         </p>
