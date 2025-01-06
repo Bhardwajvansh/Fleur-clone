@@ -58,7 +58,7 @@ const Clients = () => {
         <div className="py-20 md:py-40 bg-white">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="text-center mb-8 md:mb-16">
-                    <h2 className="text-3xl md:text-4xl text-gray-700 mb-4 md:mb-6">OUR CLIENTS</h2>
+                    <h2 className="text-4xl text-gray-700 mb-4 md:mb-6">OUR CLIENTS</h2>
                     <div className="flex justify-center items-center gap-2 mb-4 md:mb-8">
                         <div className="h-px w-12 bg-gray-300"></div>
                         <div className="w-2 h-2 rounded-full bg-gray-300"></div>

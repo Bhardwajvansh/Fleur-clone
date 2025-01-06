@@ -4,6 +4,7 @@ import Clients from "./Components/Clients/Clients"
 import FeaturesSection from "./Components/Features/Features"
 import Footer from "./Components/Footer/Footer"
 import Hero from "./Components/Hero/Hero"
+import Quote from "./Components/Quote/Quote"
 import Recommended from "./Components/Recommended/Recommended"
 import StatsDisplay from "./Components/Stats-2/Stats-2"
 import Stats from "./Components/Stats/Stats"
@@ -28,6 +29,7 @@ function App() {
       <TwitterParallax />
       <Clients />
       <Backtotop />
+      <Quote />
       <Footer />
     </>
   )
