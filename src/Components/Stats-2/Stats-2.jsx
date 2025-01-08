@@ -45,7 +45,7 @@ const StatsDisplay = () => {
                     setIsVisible(true);
                 }
             },
-            { threshold: 0.5 } // Trigger when 50% of the section is visible
+            { threshold: 0.5 } 
         );
 
         if (sectionRef.current) {

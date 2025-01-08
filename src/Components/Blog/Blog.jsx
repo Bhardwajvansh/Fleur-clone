@@ -104,14 +104,12 @@ const Blog = () => {
 
     return (
         <section className="relative overflow-hidden">
-            {/* Add the image as a fixed background */}
             <div
                 className="absolute inset-0 -z-20 bg-cover bg-center"
                 style={{
                     backgroundImage: `url(${Bg})`,
                 }}
             />
-            {/* Overlay to enhance contrast */}
             <div className="absolute inset-0 bg-white/40 -z-10"></div>
 
             <div className="relative z-10 py-16 md:py-24">

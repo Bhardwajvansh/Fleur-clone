@@ -42,7 +42,6 @@ const Footer = () => {
                 </div>
                 <div className="mt-16">
                     <h2 className="text-white text-xl font-medium mb-4 md:mb-6">INSTAGRAM</h2>
-                    {/* Add Instagram content if necessary */}
                 </div>
             </div>
 
